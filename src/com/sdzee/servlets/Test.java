@@ -12,7 +12,8 @@ public class Test extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String message = "Transmission de variables : OK !";
+		String paramAuteur = request.getParameter("auteur");
+		String message = "Transmission de variables : OK ! " + paramAuteur;
 		request.setAttribute("test", message);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
 	}
