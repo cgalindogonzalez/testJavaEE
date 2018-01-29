@@ -9,19 +9,13 @@
     <body>
         <p>Ceci est une page générée depuis une JSP.</p>
         <p>
-            <% 
-            String attribut = (String) request.getAttribute("test");
-            out.println( attribut );
-
-            String parametre = request.getParameter( "auteur" );
-            out.println( parametre );
-            %>
+        		${test}
+        		${param.auteur}
         </p>
         <p>
             Récupération du bean :
-            <jsp:useBean id="coyote" class="com.sdzee.beans.Coyote" scope="request"/>
-            <jsp:getProperty property="prenom" name="coyote"/>
-            <jsp:getProperty property="nom" name="coyote"/>
+           ${coyote.prenom}
+           ${coyote.nom}
         </p>
     </body>
 </html>
