@@ -19,11 +19,9 @@
         </p>
         <p>
             Récupération du bean :
-            <%  
-        com.sdzee.beans.Coyote notreBean = (com.sdzee.beans.Coyote) request.getAttribute("coyote");
-        out.println( notreBean.getPrenom() );
-            out.println( notreBean.getNom() );
-            %>
+            <jsp:useBean id="coyote" class="com.sdzee.beans.Coyote" scope="request"/>
+            <jsp:getProperty property="prenom" name="coyote"/>
+            <jsp:getProperty property="nom" name="coyote"/>
         </p>
     </body>
 </html>
